@@ -4,4 +4,4 @@
 
 ## GitHub Pages
 
-Your site is ready to be published at https://castorsugar.github.io/bookcity/
+Your site is ready to be published at <a target="_blank" src="https://castorsugar.github.io/bookcity/">The Page</a>
