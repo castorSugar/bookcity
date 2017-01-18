@@ -18,7 +18,7 @@
       text-align:left;
       width: 100%;
       overflow: hidden;
-      background-color: #e9dfc7;
+      background-color: #E9DFC7;
     }
 
     /* 阅读器主体 */
@@ -74,7 +74,7 @@
     .top-nav{
       position: fixed;
       top: 0;
-      z-index: 1;
+      z-index: 2;
       width: 100%;
       height: 50px;
       background-color: #000;
@@ -93,26 +93,22 @@
       position: absolute;
       top: 16px;
       left: 42px;
-      color: #d5d5d6;
+      color: #D5D5D6;
     }
 
     /* 底部面板侧边栏 */
-    .nav-pannel-bg{
-      position: fixed;
-      bottom: 70px;
-      z-index: 0;
-      width: 100%;
-      height: 135px;
-      background: #000;
-      opacity: 0.9;
-    }
     .nav-pannel{
       position: fixed;
       bottom: 70px;
-      z-index: 1;
+      z-index: 2;
       width: 100%;
       height: 135px;
-      color: #fff;
+      color: #FFF;
+    }
+    .nav-pannel-bg{
+      z-index: 0;
+      background: #000;
+      opacity: 0.9;
     }
     .child-mod{
       margin: 15px;
@@ -124,10 +120,10 @@
     }
     .font-size-button{
       padding: 5px 40px;
-      border: 1px solid #8c8c8c;
+      border: 1px solid #8C8C8C;
       background: none;
       border-radius: 16px;
-      color: #fff;
+      color: #FFF;
     }
     .child-mod button:nth-child(2){
       margin-right: 10px;
@@ -139,7 +135,7 @@
       height: 30px;
       margin: 0 5px;
       border-radius: 15px;
-      background-color: #fff;
+      background-color: #FFF;
       vertical-align: middle;
     }
     .bg-container:nth-of-type(2){
@@ -162,25 +158,21 @@
       width: 32px;
       height: 32px;
       border-radius: 16px;
-      border: 1px solid #ff7800;
+      border: 1px solid #FF7800;
     }
 
     /* 底部侧边栏 */
-    .bottom-nav-bg{
-      position: fixed;
-      bottom: 0;
-      z-index: 0;
-      width: 100%;
-      height: 70px;
-      background-color: #000;
-      opacity: 0.9;
-    }
     .bottom-nav{
       position: fixed;
       bottom: 0;
-      z-index: 1;
+      z-index: 2;
       width: 100%;
       height: 70px;
+    }
+    .bottom-nav-bg{
+      z-index: 0;
+      background-color: #000;
+      opacity: 0.9;
     }
     .item{
       display: inline-block;
@@ -189,7 +181,7 @@
       margin: 12px 0 0;
       vertical-align: middle;
       text-align: center;
-      color: #d5d5d5;
+      color: #D5D5D5;
     }
     .item-icon{
       width: 26px;
@@ -226,11 +218,48 @@
       background-size: contain;
       background-repeat: no-repeat;
     }
+
+    /* 唤出侧边栏区域 */
+    .artical-action-mid{
+      position: fixed;
+      top: 25%;
+      left: 15%;
+      z-index: 1;
+      width: 70%;
+      height: 50%;
+    }
+
+    /* 翻页区域 */
+    .artical-action-prev{
+      position: fixed;
+      left: 0;
+      z-index: 1;
+      width: 15%;
+      height: 100%;
+    }
+    .artical-action-next{
+      position: fixed;
+      right: 0;
+      z-index: 1;
+      width: 15%;
+      height: 100%;
+    }
   </style>
 </head>
 <body>
   <div id="root" class="container">
-    <div id="top-nav" class="top-nav">
+    <div class="m-artical-action">
+      <div id="action-mid" class="artical-action-mid">
+
+      </div>
+      <div id="action-prev" class="artical-action-prev">
+
+      </div>
+      <div id="action-next" class="artical-action-next">
+
+      </div>
+    </div>
+    <div id="top-nav" class="top-nav" style="display: none;">
       <div class="icon-back">
 
       </div>
@@ -242,15 +271,7 @@
 
     </div>
     <div id="fiction-container" class="m-read-content">
-      <h4>百度新闻</h4>
-      <p>百度新闻是包含海量资讯的新闻服务平台,真实反映每时每刻的新闻热点。您可以搜索新闻事件、热点话题、人物动态、产品资讯等,快速了解它们的最新进展。</p>
-      <p>百度新闻是包含海量资讯的新闻服务平台,真实反映每时每刻的新闻热点。您可以搜索新闻事件、热点话题、人物动态、产品资讯等,快速了解它们的最新进展。</p>
-      <p>百度新闻是包含海量资讯的新闻服务平台,真实反映每时每刻的新闻热点。您可以搜索新闻事件、热点话题、人物动态、产品资讯等,快速了解它们的最新进展。</p>
-      <p>百度新闻是包含海量资讯的新闻服务平台,真实反映每时每刻的新闻热点。您可以搜索新闻事件、热点话题、人物动态、产品资讯等,快速了解它们的最新进展。</p>
-      <p>百度新闻是包含海量资讯的新闻服务平台,真实反映每时每刻的新闻热点。您可以搜索新闻事件、热点话题、人物动态、产品资讯等,快速了解它们的最新进展。</p>
-      <p>百度新闻是包含海量资讯的新闻服务平台,真实反映每时每刻的新闻热点。您可以搜索新闻事件、热点话题、人物动态、产品资讯等,快速了解它们的最新进展。</p>
-      <p>百度新闻是包含海量资讯的新闻服务平台,真实反映每时每刻的新闻热点。您可以搜索新闻事件、热点话题、人物动态、产品资讯等,快速了解它们的最新进展。</p>
-      <p>百度新闻是包含海量资讯的新闻服务平台,真实反映每时每刻的新闻热点。您可以搜索新闻事件、热点话题、人物动态、产品资讯等,快速了解它们的最新进展。</p>
+
     </div>
     <div class="m-button-bar">
       <ul class="u-tab">
@@ -258,10 +279,10 @@
         <li id="next-button">next chapter</li>
       </ul>
     </div>
-    <div class="nav-pannel-bg">
+    <div class="nav-pannel nav-pannel-bg" style="display: none;">
 
     </div>
-    <div id="nav-pannel" class="nav-pannel">
+    <div id="nav-pannel" class="nav-pannel" style="display: none;">
       <div class="child-mod">
         <span>font size</span>
         <button id="large-font" class="font-size-button" type="button" name="">big</button>
@@ -296,10 +317,10 @@
         </div>
       </div>
     </div>
-    <div class="bottom-nav-bg">
+    <div class="bottom-nav bottom-nav-bg" style="display: none;">
 
     </div>
-    <div id="bottom-nav" class="bottom-nav">
+    <div id="bottom-nav" class="bottom-nav" style="display: none;">
       <div id="menu-button" class="item">
         <div class="item-icon icon-menu"></div>
         <div class="menu-title">menu</div>
@@ -308,7 +329,7 @@
         <div class="item-icon icon-font"></div>
         <div class="font-title">font</div>
       </div>
-      <div id="nigth-button" class="item">
+      <div id="night-button" class="item">
         <div id="daytime-icon" class="item-wrap" style="display: none">
           <div class="item-icon icon-daytime"></div>
           <div class="daytime-title">daytime</div>
@@ -326,5 +347,314 @@
   </script>
   <script type="text/javascript" src="./js/jquery.base64.js"></script>
   <script type="text/javascript" src="./js/jquery.jsonp.js"></script>
+  <script type="text/javascript">
+    (function () {
+      /*
+       * 本地浏览器数据获取和存储方法
+       * 跨域数据请求方法
+       */
+      var Util = (function () {
+        var prefix = "html5_reader_";
+
+        var StorageGetter = function (key) {
+          return localStorage.getItem(prefix + key);
+        }
+
+        var StorageSetter = function (key,value) {
+          return localStorage.setItem(prefix + key, value);
+        }
+
+        var getJsonp = function (url,callback) {
+          return $.jsonp({ // 跨域jsonp插件
+            url: url,
+            cache: true,
+            callback: "duokan_fiction_chapter", // 与后台约定函数名称
+            success: function (result) {
+              // debugger
+              var base64Data = $.base64.decode(result); // 解码base64插件
+              var jsonData = decodeURIComponent(escape(base64Data)); // 1.escape()对字符串进行编码;2.decodeURIComponent()对含有编码 URI 组件或其他要解码的文本进行解码
+              callback(jsonData);
+            }
+          })
+        }
+
+        return {
+          StorageGetter: StorageGetter,
+          StorageSetter: StorageSetter,
+          getJsonp: getJsonp
+        }
+      })();
+
+      /*
+       * 元素预设
+       */
+      var Win = $(window);
+      var Doc = $(document);
+      var FictionContainer = $("#fiction-container");
+      var readerModel;
+      var readerUI;
+      var Dom = {
+        body: $("body"),
+        action_mid: $("#action-mid"),
+        action_prev: $("#action-prev"),
+        action_next: $("#action-next"),
+        top_nav: $("#top-nav"),
+        bottom_nav: $(".bottom-nav"),
+        nav_pannel: $(".nav-pannel"),
+        menu_button: $("#menu-button"),
+        font_button: $("#font-button"),
+        night_button: $("#night-button"),
+        large_font: $("#large-font"),
+        small_font: $("#small-font"),
+        bg_container: $(".bg-container"),
+        daytime_icon: $("#daytime-icon"),
+        night_icon: $("#night-icon"),
+        prev_button: $("#prev-button"),
+        next_button: $("#next-button")
+      }
+      var initFontSize = Util.StorageGetter("font_size") ? parseInt(Util.StorageGetter("font_size")) : 14;
+      var initBackgroundColor = Util.StorageGetter("background_color") ? Util.StorageGetter("background_color") : "#E9DFC7";
+      var isNight = Util.StorageGetter("is_night") ? Util.StorageGetter("is_night") : "daytime";
+
+      /*
+       * 入口函数
+       */
+      function main() {
+        FictionContainer.css("font-size",initFontSize);
+        Dom.body.css("background-color",initBackgroundColor);
+
+        if (isNight === "daytime") {
+          Dom.daytime_icon.css("display","none");
+          Dom.night_icon.css("display","block");
+        } else {
+          Dom.daytime_icon.css("display","block");
+          Dom.night_icon.css("display","none");
+        }
+
+        readerModel = ReaderModel();
+        readerUI = ReaderBaseFrame(FictionContainer)
+
+        readerModel.init(function (callback) {
+          readerUI(callback);
+        });
+
+        EventHandler();
+      }
+
+      /*
+       * 实现和阅读器相关数据交互
+       */
+      function ReaderModel() {
+        var chapterId;
+        var chapterTotal;
+        var init = function (UIcallback) {
+          getFictionInfo(function () {
+            getCurrentChapterContent(chapterId, function (data) {
+              UIcallback && UIcallback(data);
+            });
+          });
+        }
+        // 获得章节信息
+        var getFictionInfo = function (callback) {
+          $.get("./data/chapter.json",function (data) {
+            // 对照本地模拟数据拆解
+            chapterId = Util.StorageGetter("pagination") ? parseInt(Util.StorageGetter("pagination"),10) : data.chapters[1].chapter_id;
+            chapterTotal = data.chapters.length;
+            Util.StorageSetter("pagination",chapterId);
+            callback && callback();
+          },"json");
+        }
+
+        // 根据章节信息获得当前章节内容
+        var getCurrentChapterContent = function (chapter_id,callback) {
+          $.get("./data/data" + chapter_id + ".json",function (data) {
+            if (data.result === 0) {
+              // 获取成功，得到数据地址
+              var url = data.jsonp;
+              // 跨域访问数据--jsonp
+              Util.getJsonp(url,function (data) {
+                // debugger
+                callback && callback(data);
+              });
+
+            }
+          },"json");
+        }
+
+        // 跳转到上一页
+        var prevChapter = function (UIcallback) {
+          chapterId = parseInt(chapterId,10);
+          if (chapterId === 0) {
+            return;
+          }
+          chapterId -= 1;
+          getCurrentChapterContent(chapterId,UIcallback);
+          Util.StorageSetter("pagination",chapterId);
+          Win.scrollTop(0);
+        }
+
+        // 跳转到下一页
+        var nextChapter = function (UIcallback) {
+          chapterId = parseInt(chapterId,10);
+          if (chapterId === chapterTotal) {
+            return;
+          }
+          chapterId += 1;
+          getCurrentChapterContent(chapterId,UIcallback);
+          Util.StorageSetter("pagination",chapterId);
+          Win.scrollTop(0);
+        }
+
+        return {
+          init: init,
+          prevChapter: prevChapter,
+          nextChapter: nextChapter
+        }
+      }
+
+      /*
+       * 实现阅读器基本结构渲染
+       */
+      function ReaderBaseFrame(container) {
+        function parseChapterData(jsonData) {
+          var jsonParserData = JSON.parse(jsonData);
+          var html = "<h4>" + jsonParserData.t + "</h4>";
+          for (var i = 0; i < jsonParserData.p.length; i++) {
+            html += "<p>" + jsonParserData.p[i] + "</p>"
+          }
+          return html;
+        }
+
+        return function (data) {
+          container.html(parseChapterData(data));
+        }
+
+      }
+
+      /*
+       * 交互事件绑定
+       */
+      function EventHandler() {
+        /*
+         * 唤出侧边栏
+         * 使用click事件
+         * 1、Android4.0不再300ms延
+         * 2、兼容PC端
+         */
+        Dom.action_mid.click(function () {
+          if (Dom.top_nav.css("display") === "none") {
+            Dom.top_nav.show();
+            Dom.bottom_nav.show();
+          } else {
+            Dom.top_nav.hide();
+            Dom.bottom_nav.hide();
+            Dom.nav_pannel.hide();
+            Dom.font_button.find(".item-icon").removeClass("icon-font-actived");
+          }
+        })
+
+        Win.scroll(function () {
+          Dom.top_nav.hide();
+          Dom.bottom_nav.hide();
+          Dom.nav_pannel.hide();
+          Dom.font_button.find(".item-icon").removeClass("icon-font-actived");
+        })
+
+        /* 唤出目录 */
+        Dom.menu_button.click();
+
+        /* 唤出字体背景设置 */
+        Dom.font_button.click(function () {
+          if (Dom.nav_pannel.css("display") === "none") {
+            Dom.nav_pannel.show();
+            Dom.font_button.find(".item-icon").addClass("icon-font-actived");
+          } else {
+            Dom.nav_pannel.hide();
+            Dom.font_button.find(".item-icon").removeClass("icon-font-actived");
+          }
+        });
+
+        /* 字体设置 */
+        Dom.large_font.click(function () {
+          if (initFontSize > 20) {
+            return;
+          }
+          initFontSize += 1;
+          FictionContainer.css("font-size",initFontSize);
+          Util.StorageSetter("font_size",initFontSize);
+        })
+        Dom.small_font.click(function () {
+          if (initFontSize < 12) {
+            return;
+          }
+          initFontSize -= 1;
+          FictionContainer.css("font-size",initFontSize);
+          Util.StorageSetter("font_size",initFontSize);
+        })
+
+        /* 背景设置 */
+        Dom.bg_container.each(function (index,element) {
+          $(element).click(function () {
+            initBackgroundColor = $(this).css("background-color");
+            Dom.body.css("background-color",initBackgroundColor);
+            Util.StorageSetter("background_color",initBackgroundColor);
+            if (index === Dom.bg_container.length - 1) {
+              Dom.daytime_icon.show();
+              Dom.night_icon.hide();
+              Util.StorageSetter("is_night","night");
+            } else {
+              Dom.daytime_icon.hide();
+              Dom.night_icon.show();
+              Util.StorageSetter("is_night","daytime");
+            }
+          })
+        })
+
+        /* 夜间模式 */
+        Dom.night_button.click(function () {
+          if (Dom.daytime_icon.css("display") === "none") {
+            Dom.daytime_icon.show();
+            Dom.night_icon.hide();
+            initBackgroundColor = "#2C364A";
+            Dom.body.css("background-color",initBackgroundColor);
+            Util.StorageSetter("background_color",initBackgroundColor);
+            Util.StorageSetter("is_night","night");
+          } else {
+            Dom.daytime_icon.hide();
+            Dom.night_icon.show();
+            initBackgroundColor = "#E9DFC7";
+            Dom.body.css("background-color",initBackgroundColor);
+            Util.StorageSetter("background_color",initBackgroundColor);
+            Util.StorageSetter("is_night","daytime");
+          }
+        });
+
+        /* 翻页 */
+        Dom.prev_button.click(function () {
+          readerModel.prevChapter(function (callback) {
+            readerUI(callback);
+          });
+        })
+        Dom.next_button.click(function () {
+          readerModel.nextChapter(function (callback) {
+            readerUI(callback);
+          });
+        })
+        Dom.action_prev.click(function () {
+          readerModel.prevChapter(function (callback) {
+            readerUI(callback);
+          });
+        })
+        Dom.action_next.click(function () {
+          readerModel.nextChapter(function (callback) {
+            readerUI(callback);
+          });
+        })
+
+      }
+
+      main();
+    })();
+  </script>
 </body>
 </html>
