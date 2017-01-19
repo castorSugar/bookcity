@@ -349,6 +349,7 @@
   <script type="text/javascript" src="./js/jquery.jsonp.js"></script>
   <script type="text/javascript">
     (function () {
+      'use strict'
       /*
        * 本地浏览器数据获取和存储方法
        * 跨域数据请求方法
@@ -448,22 +449,45 @@
         var chapterId;
         var chapterTotal;
         var init = function (UIcallback) {
-          getFictionInfo(function () {
-            getCurrentChapterContent(chapterId, function (data) {
+        //   getFictionInfo(function () {
+        //     getCurrentChapterContent(chapterId, function (data) {
+        //       UIcallback && UIcallback(data);
+        //     });
+        //   });
+            getFictionInfoPromise().then(function () {
+              return getCurrentChapterContentPromise();
+            },function (data) {
+              console.log(data.msg);
+            }).then(function (data) {
               UIcallback && UIcallback(data);
-            });
-          });
+            },function (data) {
+              console.log(data.msg);
+            })
         }
         // 获得章节信息
         var getFictionInfo = function (callback) {
           $.get("./data/chapter.json",function (data) {
             // 对照本地模拟数据拆解
-            chapterId = Util.StorageGetter("pagination") ? parseInt(Util.StorageGetter("pagination"),10) : data.chapters[1].chapter_id;
+            chapterId = Util.StorageGetter("pagination") === null ? data.chapters[1].chapter_id : parseInt(Util.StorageGetter("pagination"),10);
             chapterTotal = data.chapters.length;
             Util.StorageSetter("pagination",chapterId);
             callback && callback();
           },"json");
         }
+        var getFictionInfoPromise = function () {
+          return new Promise(function (resolve,reject) {
+            $.get("./data/chapter.json",function (data) {
+              if (data.result === 0) {
+                  chapterId = Util.StorageGetter("pagination") === null ? data.chapters[1].chapter_id : Util.StorageGetter("pagination");
+                  chapterTotal = data.chapters.length;
+                  Util.StorageSetter("pagination",chapterId);
+                  resolve();
+              } else {
+                  reject({msg: "获得章节信息失败"});
+              }
+            },"json");
+          })
+        };
 
         // 根据章节信息获得当前章节内容
         var getCurrentChapterContent = function (chapter_id,callback) {
@@ -480,6 +504,20 @@
             }
           },"json");
         }
+        var getCurrentChapterContentPromise = function () {
+          return new Promise(function (resolve,reject) {
+              $.get("./data/data" + chapterId + ".json",function (data) {
+                  if (data.result === 0) {
+                      var url = data.jsonp;
+                      Util.getJsonp(url,function (data) {
+                          resolve(data);
+                      })
+                  } else {
+                      reject({msg: "获得当前章节内容失败"});
+                  }
+              },"json");
+          })
+        };
 
         // 跳转到上一页
         var prevChapter = function (UIcallback) {
