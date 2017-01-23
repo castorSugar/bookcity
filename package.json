@@ -1,0 +1,27 @@
+{
+  "name": "web-app-reader",
+  "version": "1.0.0",
+  "description": "reader webApp",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "koa",
+    "vue",
+    "ejs"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "auto-reload": "0.0.2",
+    "co-views": "^2.1.0",
+    "ejs": "^2.5.5",
+    "koa": "^1.2.4",
+    "koa-route": "^2.4.2",
+    "koa-static-server": "^1.0.0",
+    "koa-views": "^5.2.0",
+    "webpack": "^1.14.0"
+  }
+}
