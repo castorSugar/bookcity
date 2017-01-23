@@ -1,0 +1,82 @@
+<style type="text/css">
+	.header-tab{
+		position: relative;
+		padding: 0px 90px;
+		text-align: center;
+		line-height: 44px;
+		border-bottom: 1px solid #ddd;
+		background-color: #efeff0;
+	}
+	.header-tab a:before{
+		content: "\4e66\57ce";
+		display: block;
+		margin: 0 auto;
+		width: 2em;
+	}
+	.header-tab a:last-of-type:before{
+		content: "\4e66\67b6"
+	}
+	.header-tab i{
+		bottom: -1px;
+	}
+	.header-tab i:before{
+		content: "";
+		display: block;
+		width: 34px;
+		height: 2px;
+		margin: 0 auto;
+		background-color: #777;
+	}
+	.header-user,.header-checkin{
+		position: absolute;
+		background:url(http://www.duokan.com/m/static/images/icon.png?bd449e12560d226c8be720e820f430e8) no-repeat center;
+		width: 16px;
+		height: 16px;
+		background-size: 16px;
+	}
+	.header-user{
+		top: 14px;
+		right: 14px;
+		background-position: 0 -1px;
+	}
+	.header-checkin{
+		left: 14px;
+		top: 14px;
+		background-position: 0 -68px;
+	}
+	.swipe-tab{
+		position: relative;
+		overflow: hidden;
+		z-index: 1;
+	}
+	.swipe-tab a{
+		float: left;
+		text-align: center;
+		-webkit-tap-highlight-color: rgba(0,0,0,0);
+	}
+	.swipe-tab i{
+		position: absolute;
+		left: 0;
+		-webkit-transition: -webkit-transform .3s ease-out;
+	}
+	.swipe-tab-two a{
+		width: 50%;
+	}
+	.clf:after{
+		content: "";
+		clear: both;
+		display: table;
+	}
+</style>
+<div class="header-tab" id="app_header">
+	<div class="swipe-tab swipe-tab-two clf">
+		<a href="javascript:;"></a>
+		<a href="javascript:;"></a>
+		<i style="width: 50%; transition-duration: 0s; transform: translate3d(0px,0px,0px);"></i>
+	</div>
+	<em class="header-user">
+
+	</em>
+	<em class="header-checkin">
+	</em>
+</div>
