@@ -3,22 +3,44 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
 		<meta name="format-detection" content="telephone=no">
-		<titel><%=title%></title>
+		<title><%=title%></title>
 		<link rel="stylesheet" type="text/css" href="/static/css/all.css">
 		<link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+		<style type="text/css">
+			.container-wrap{
+				position: relative;
+				height: 100%;
+				overflow: hidden;
+			}
+			.container-scroll{
+				position: absolute;
+				top: 45px;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				overflow-y: scroll;
+			}
+		</style>
 	</head>
 	<body>
-		<div id="root">
-		    <% include include/header.html %>
-		    <div>
-		        <% include include/index-top.html %>
-		        <% include include/index-hot.html %>
-		        <% include include/index-recommend.html %>
-		        <% include include/index-male.html %>
-		        <% include include/index-female.html %>
+		<div id="app" style="width: 734px; overflow: hidden;">
+		    	<% include include/header.html %>
+			<div style="width: 1468px; transition-duration: {{duration}}s; transform: translate3d({{position}}px,0px,0px);">
+				<div class="container-wrap" style="width: 734px; float: left;">
+		    			<div class="container-scroll" style="top: 0;">
+		        			<% include include/index-top.html %>
+		        			<% include include/index-hot.html %>
+		        			<% include include/index-recommend.html %>
+		        			<% include include/index-male.html %>
+		        			<% include include/index-female.html %>
 						<% include include/index-free.html %>
-		        <% include include/index-bottom.html %>
-		    </div>
+		        			<% include include/index-bottom.html %>
+		    			</div>
+				</div>
+				<div style="width: 734px; float: left;">
+					<% include include/index-shelf.html %>
+				</div>
+			</div>
 		</div>
 		<script src="/static/script/vue.js"></script>
 		<script src="/static/script/zepto.js"></script>
