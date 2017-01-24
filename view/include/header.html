@@ -67,12 +67,15 @@
 		clear: both;
 		display: table;
 	}
+	.swipe-tab-on{
+		color: #ff6600;
+	}
 </style>
 <div class="header-tab" id="app_header">
 	<div class="swipe-tab swipe-tab-two clf">
-		<a href="javascript:;"></a>
-		<a href="javascript:;"></a>
-		<i style="width: 50%; transition-duration: 0s; transform: translate3d(0px,0px,0px);"></i>
+		<a class="{{tab_1_class}}" v-on:click="tabSwitch(0)" href="javascript:;"></a>
+		<a class="{{tab_2_class}}" v-on:click="tabSwitch(1)" href="javascript:;"></a>
+		<i style="width: 277px; transition-duration: {{header_duration}}s; transform: translate3d({{header_position}}px,0px,0px);"></i>
 	</div>
 	<em class="header-user">
 
